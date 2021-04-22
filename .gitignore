@@ -139,4 +139,4 @@ cython_debug/
 
 #Custom Data Files
 *.zip
-*.md
+*.DS_STORE
