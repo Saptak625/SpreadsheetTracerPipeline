@@ -46,22 +46,20 @@ login_manager = LoginManager()
 login_manager.init_app(application)
 
 # Naive database setup
-try:
-    init_db_command()
-except sqlite3.OperationalError:
-    # Assume it's already been created
-    pass
+# try:
+#     init_db_command()
+# except sqlite3.OperationalError:
+#     # Assume it's already been created
+#     pass
 
-try:
-    init_db_local()
-except sqlite3.OperationalError:
-    # Assume it's already been created
-    pass
+# try:
+#     init_db_local()
+# except sqlite3.OperationalError:
+#     # Assume it's already been created
+#     pass
 
 # OAuth 2 client setup
 client = WebApplicationClient(GOOGLE_CLIENT_ID)
-
-queryParameters = []
 
 # Flask-Login helper to retrieve a user from our db
 @login_manager.user_loader
@@ -214,7 +212,6 @@ def teacherPrelogin():
     logout_user()
     flash('Logout Successful!', 'success')
     return render_template("teacherPrelogin.html")
-
 
 @application.route("/studentlogin")
 def studentLogin():
