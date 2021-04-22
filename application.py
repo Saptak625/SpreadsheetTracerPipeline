@@ -361,7 +361,8 @@ def teacherCallback():
     # Send user back to homepage
     return redirect(url_for("teacherHomepage"))
 
-
+"""
 if __name__ == "__main__":
     #Development only
     application.run(debug=True, ssl_context="adhoc")
+"""
